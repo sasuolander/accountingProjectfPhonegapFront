@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.mobile-1.5.0-alpha.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.editor.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="js/sum().js"></script>
+    <script type="text/javascript" src="js/omat.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/select.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/editor.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
+    <title>app</title>
+</head>
+    <body>
+            <div data-role="page" id="login" >
+                <div data-role="header">
+                        <h1>Login Page</h1>
+                </div> <!-- /header -->
+                <div role="main" class="ui-content ui-body-a">
+                    <form id="userInfor" action="" method="post">
+                    Username:<input type="text" name="username" value="username">
+                    Password:<input type="text" name="password" value="password">
+                    </form>
+                        <a href="#Central_pages" class="ui-btn">login</a>
+                        <a href="#Register" class="ui-btn">register</a>
+                </div>
+                 <div data-role="footer">
+                    </div> <!-- /footer -->
+            </div>
+            <div   data-role="page" id="Central_pages">
+                <div data-role="header">
+                        <h1>central page</h1>
+                    </div> <!-- /header -->
+                <div role="main" class="ui-content ui-body-a">
+                <a href="#MainList" class="ui-btn">Main List</a>
+                <a href="#ChangePassword" class="ui-btn">Change password</a>
+                    <a href="#login" class="ui-btn">Logout</a> 
+                </div>
+                 <div data-role="footer">
+                          <h1>footer</h1>  
+                    </div> <!-- /footer -->
+            </div>
+            <div data-role="page" id="MainList">
+                <div data-role="header">
+                        <h1>MainList</h1>
+                    </div> <!-- /header -->
+                        <div role="main" class="ui-content ui-body-a">
+                            <a href="#Central_pages" class="ui-btn">mainpage</a>
+                            <div id="cost">
+                            </div>
+                            <div id="datacontainer">
+                            <table id="UserTable" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>id</th>
+                                    </tr>
+                                </thead>
+                                
+                                
+                            </table>
+                                <table id="information" class="display" cellspacing="0" width="100%">
+                                    <a href="#add_Item" class="dt-button buttons-create ui-btn ui-btn-inline" tabindex="0" id="NewItemButton" ><span>New</span></a>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>time</th>
+                                        <th>id</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            </div>
+                </div>
+                
+                 <div data-role="footer">
+                          <h1>footer</h1>  
+                    </div> <!-- /footer -->
+            </div>
+        <div data-role="popup" id="add_Item" class="ui-content ui-block-b" data-overlay-theme="a" style="position: absolute; display: none">
+                <form id="addItem2" action="" method="post" style="">
+                    <div>
+                        <label for="text-basic">Name:</label>
+                            <input type="text" name="name">
+                        <label for="text-basic">Price:</label>
+                            <input type="text" name="price">
+                        <label for="text-basic">Username id:</label>
+                            <input type="text" name="usernameid">
+                        <input type="submit" id="submitItem">
+                    </div>
+                </form>
+            
+            <div style="display: none" id="usernumber">
+            </div>
+            <a href="#MainList" id="exitNewItem" class="ui-btn">Main List</a>
+                </div>
+            <div  data-role="page" id="Register">
+                <div data-role="header">
+                        <h1>Register</h1>
+                    </div> <!-- /header -->
+                <div role="main" class="ui-content ui-body-a">
+                     <form id="AddUser" action="" method="post">
+                    Username:<input type="text" name="username" value="username">
+                    Password:<input type="text" name="password" value="password">
+                    </form>
+                <a href="#login" class="ui-btn">accept</a>
+                </div>
+                 <div data-role="footer">
+                          <h1>footer</h1>  
+                    </div> <!-- /footer -->
+            </div>
+            <div  data-role="page" id="ChangePassword">
+                <div data-role="header">
+                        <h1>Change password</h1>
+                </div> <!-- /header -->
+                <div role="main" class="ui-content ui-body-a">
+                    <form id="UpdatePassword" action="" method="post">
+                     write new password:<input type="text" name="NewPassword" value="password">
+                    </form>
+                <a href="#Central_pages" class="ui-btn">mainpage</a>
+                </div>
+                 <div data-role="footer">
+                          <h1>footer</h1>  
+                    </div> <!-- /footer -->
+            </div>
+         
+    </body>
+</html>
