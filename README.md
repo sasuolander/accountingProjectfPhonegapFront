@@ -1,1 +1,1 @@
-This phonegap project.
+This is phonegap project.
